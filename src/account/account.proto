@@ -1,0 +1,47 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+package account;
+
+service AccountRPCService {
+    rpc GetAccount(IdRequest) returns (AccountResponse){}
+    rpc GetAccounts(google.protobuf.Empty) returns (FindAllResponse){}
+    rpc CreateAccount(CreateRequest) returns (AccountResponse){}
+    rpc UpdateAccount(UpdateRequest) returns (AccountResponse){}
+    rpc DeleteAccount(IdRequest) returns (google.protobuf.Empty){}
+}
+
+message CreateRequest {
+    string firstName = 1;
+    string lastName = 2;
+    string phone = 3;
+    string address = 4;
+    string gender = 5;
+}
+
+message AccountResponse {
+    string id = 1;
+    string firstName = 2;
+    string lastName = 3;
+    string phone = 4;
+    string address = 5;
+    string gender = 6;
+}
+
+message UpdateRequest {
+    string id = 1;
+    optional string firstName = 2;
+    optional string lastName = 3;
+    optional string phone = 4;
+    optional string address = 5;
+    optional string gender = 6;
+}
+
+message IdRequest {
+    string id = 1;
+}
+
+message FindAllResponse {
+    repeated AccountResponse accounts = 1;
+}
+
