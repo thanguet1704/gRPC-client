@@ -22,7 +22,7 @@ export class AccountController {
   }
 
   @Get()
-  getAccounts(): Observable<IAccount[]> {
+  getAccounts(): Observable<{accounts: IAccount[]}> {
     return this.accountService.getAccounts();
   }
 

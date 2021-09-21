@@ -19,23 +19,19 @@ export class AccountService implements OnModuleInit {
     return this.accountGRPCService.getAccount(id);
   }
 
-  getAccounts(): Observable<IAccount[]> {
-    console.log('getAccounts');
+  getAccounts(): Observable<{accounts: IAccount[]}> {
     return this.accountGRPCService.getAccounts({});
   }
 
   createAccount(body: ICreateAccount): Observable<IAccount> {
-    console.log('createAccount');
     return this.accountGRPCService.createAccount(body);
   }
 
   updateAccount(id: string, body: ICreateAccount): Observable<IAccount> {
-    console.log('updateAccount');
     return this.accountGRPCService.updateAccount(id, body);
   }
 
   deleteAccount(id: string): Observable<void> {
-    console.log('deleteAccount');
     return this.accountGRPCService.deleteAccount(id);
   }
 }

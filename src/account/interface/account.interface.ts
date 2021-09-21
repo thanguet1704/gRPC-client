@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 
 export interface AccountRPCService {
   getAccount(id: string): Observable<IAccount>;
-  getAccounts(data): Observable<IAccount[]>;
+  getAccounts(data): Observable<{accounts:IAccount[]}>;
   createAccount(body: ICreateAccount): Observable<IAccount>;
   updateAccount(id: string, body: IUpdateAccount): Observable<IAccount>;
   deleteAccount(id: string): Observable<void>;
