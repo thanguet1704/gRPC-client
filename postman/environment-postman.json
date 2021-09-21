@@ -1,0 +1,14 @@
+{
+	"id": "de3a3506-fece-4375-88a0-fac9fd756388",
+	"name": "environment",
+	"values": [
+		{
+			"key": "accountId",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-04-22T22:40:40.358Z",
+	"_postman_exported_using": "Postman/8.2.3"
+}
